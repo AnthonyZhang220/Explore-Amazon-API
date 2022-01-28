@@ -10,7 +10,7 @@ const generateScraperUrl = (apiKey) =>
 app.use(express.json());
 
 app.get("/", (req, res) => {
-	res.send("Welcome to Find GPU API.");
+	res.send("Welcome to Explore Amazon API.");
 });
 
 //Get product details
