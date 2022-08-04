@@ -1,5 +1,5 @@
 {
-  "name": "find_gpu_api",
+  "name": "explore-amazon-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/AnthonyZhang220/Find_GPU_API#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "heroku-keep-awake": "^1.1.2",
     "nodemon": "^2.0.15",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"

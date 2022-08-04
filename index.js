@@ -1,5 +1,13 @@
 const express = require("express");
 const request = require("request-promise");
+const { wakeDyno, wakeDynos } = require("heroku-keep-awake");
+const DYNO_URL = "https://explore-amazon-api.herokuapp.com/";
+
+const opts = {
+    interval: 29,
+    logging: false,
+    stopTimes: { start: '00:00', end: '06:00' }
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -84,4 +92,7 @@ app.get("/search/:searchQuery", async (req, res) => {
 	}
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+	wakeDyno(DYNO_URL, opts); // Use this function when only needing to wake a single Heroku app.
+	console.log(`Server running on port ${PORT}`);
+});
